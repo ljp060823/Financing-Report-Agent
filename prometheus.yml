@@ -1,0 +1,5 @@
+scrape_configs:
+  - job_name: 'fastapi'
+    static_configs: [{targets: ['backend:8000']}]
+  # - job_name: 'celery'
+  #   static_configs: [{targets: ['backend:9808']}]  # 如需celery-exporter可扩展
