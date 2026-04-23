@@ -1,6 +1,6 @@
 FROM python:3.12.18-slim
 
-# 系统依赖（neo4j driver、milvus 等可能需要）
+# 系统依赖
 RUN apt-get update && apt-get install -y \
     gcc \
     libpq-dev \
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-# 先复制 requirements 并安装，充分利用 Docker 缓存加速构建
+#  requirements 并安装，充分利用 Docker 缓存加速构建
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
