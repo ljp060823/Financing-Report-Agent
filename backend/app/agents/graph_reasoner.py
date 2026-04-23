@@ -10,7 +10,7 @@ async def graph_reasoner_node(state):
     extraction = await llm.ainvoke(extract_prompt)
     
     # 存入Neo4j（生产幂等）
-    # ...（省略具体MERGE，实际可根据extraction动态插入）
+    #省略具体MERGE
     company = await llm.ainvoke("从问题提取公司名：" + state["question"])
     if hasattr(company, 'usage') and company.usage:
         record_llm_usage(
