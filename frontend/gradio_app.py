@@ -1,14 +1,14 @@
 import gradio as gr
 import requests
 import json
-import httpx   # 推荐使用 httpx 支持 SSE
+import httpx 
 
 async def chat(message: str, history):
     # research启动任务
     resp = requests.post(
         "http://localhost:8000/api/research",
         json={"query": message},
-        # headers={"Authorization": "Bearer your-jwt-token"}  # 生产环境需要带 JWT
+        # headers={"Authorization": "Bearer your-jwt-token"}  # 生产环境需要 
     )
     if resp.status_code != 200:
         yield "启动任务失败，请检查后端"
