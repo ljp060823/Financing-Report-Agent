@@ -15,7 +15,7 @@ def record_llm_usage(tokens: int, model: str = "/data/Qwen2.5-14B-Instruct"):
 
 def update_celery_queue_length():
     # 通过Redis获取Celery队列长度
-    length = redis_client.llen("agent")  # 自定义队列名字
+    length = redis_client.llen("agent")  # celery队列名字
     celery_queue_length.set(length)
 
 def record_cache_hit():
