@@ -27,7 +27,7 @@ def bocha_websearch_tool(query: str, count: int = 10) -> str:
     
     url = 'https://api.bochaai.com/v1/web-search'
     headers = {
-        'Authorization': f'Bearer {BOCHA_API_KEY}',  # 请替换为你的API密钥
+        'Authorization': f'Bearer {BOCHA_API_KEY}',  
         'Content-Type': 'application/json'
     }
     data = {
@@ -76,7 +76,7 @@ async def neo4j_graph_reason(query: str) -> str:
     RETURN c.name as name, r.title as title, e.name as event
     LIMIT 10
     """
-    # 生产中可让LLM先提取company_name，这里简化示例
+    
     results = await graph_db.query(cypher, {"company_name": query})
     return str(results)
 
