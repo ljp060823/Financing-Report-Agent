@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from app.tools import neo4j_graph_reason
 from app.metrics import record_llm_usage
 
-llm = ChatOpenAI(base_url="http://localhost:8001/v1", api_key="null", model="/data/Qwen2.5-14B-Instruct")
+llm = ChatOpenAI(base_url="http://localhost:8001/v1", api_key="EMPTY", model="/data/Qwen2.5-14B-Instruct")
 
 async def graph_reasoner_node(state):
     """GraphReasoner：提取实体 → Neo4j构建 → 多跳事件查询（支持比亚迪式查询）"""
