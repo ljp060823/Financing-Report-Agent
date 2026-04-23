@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     REDIS_URI: str
     BOCHA_API_KEY: str   
 
-    # 正确指定你的.env绝对路径
+    # .env绝对路径
     model_config = SettingsConfigDict(
         env_file="/data/financial agent/.env",
         env_file_encoding="utf-8",
