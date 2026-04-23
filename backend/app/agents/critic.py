@@ -3,7 +3,7 @@ from app.metrics import record_llm_usage
 
 llm = ChatOpenAI(
     base_url="http://localhost:8001/v1",  # vLLM服务地址（双4090 tensor-parallel-size=2）
-    api_key="null",
+    api_key="EMPTY",
     model="/data/Qwen2.5-14B-Instruct"
 )
 async def critic_node(state):
